@@ -2,15 +2,16 @@
 import random
 number = random.randint(-10000, 10000)
 
+
 def lastDigit(n):
     if n < 0:
         n = abs(n)
     return (n % 10)
 
 if number < 0:
-    last_digit = lastDigit(number) * -1;
+    last_digit = lastDigit(number) * -1
 else:
-    last_digit = lastDigit(number);
+    last_digit = lastDigit(number)
 
 if last_digit > 5:
     print('Last digit of {:d} is '.format(number) + str(last_digit) +
