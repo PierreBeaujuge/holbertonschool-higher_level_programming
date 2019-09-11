@@ -3,4 +3,4 @@ for i in range(ord('z'), ord('`'), -1):
     if i % 2:
         print(str.upper(chr(i)), end='')
     else:
-        print(chr(i), end='')
+        print('{}'.format(chr(i)), end='')
