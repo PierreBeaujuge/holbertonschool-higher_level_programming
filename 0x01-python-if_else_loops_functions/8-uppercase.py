@@ -2,10 +2,10 @@
 
 
 def uppercase(str):
-    for char in str[0:-1]:
-        if char >= 'a' and char < '{':
-            char = chr(ord(char) - 32)
+    for i in range(len(str)):
+        if str[i] >= 'a' and str[i] < '{':
+            char = chr(ord(str[i]) - 32)
+        else:
+            char = str[i]
         print('{}'.format(char), end='')
-    if str[-1] >= 'a' and str[-1] < '{':
-        char = chr(ord(str[-1]) - 32)
-    print('{}'.format(char))
+    print('')
