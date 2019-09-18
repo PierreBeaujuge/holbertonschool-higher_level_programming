@@ -12,7 +12,7 @@ int is_palindrome(listint_t **head)
 {
 	int /*count = 1, */i = 0, len = 0;
 	listint_t *temp = NULL;
-	int *array = NULL;
+	int array[1000]/* *array = NULL*/;
 
 	if (!head)
 		return (0);
@@ -23,9 +23,11 @@ int is_palindrome(listint_t **head)
 		temp = temp->next, /*count++*/i++;
 	len = /*count*/(i + 1) - 1;
 
-	array = malloc(sizeof(int) * ((len / 2) + 1));
+	for (i = 0; i < 1000; i++)
+		array[i] = 0;
+/*	array = malloc(sizeof(int) * ((len / 2) + 1));
 	if (array == NULL)
-		return (-1);
+	return (-1);*/
 	i = 0, temp = *head;
 	while (i < (len / 2))
 	{
@@ -44,10 +46,10 @@ int is_palindrome(listint_t **head)
 		}
 		else
 		{
-			free(array);
+/*			free(array);*/
 			return (0);
 		}
 	}
-	free(array);
+/*	free(array);*/
 	return (1);
 }
