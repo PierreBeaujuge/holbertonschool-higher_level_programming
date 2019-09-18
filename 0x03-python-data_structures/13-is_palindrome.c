@@ -23,7 +23,7 @@ int is_palindrome(listint_t **head)
 		temp = temp->next, /*count++*/i++;
 	len = /*count*/(i + 1) - 1;
 
-	for (i = 0; i < ((len / 2) + 1); i++)
+	for (i = 0; i < 1000; i++)
 		array[i] = 0;
 /*	array = malloc(sizeof(int) * ((len / 2) + 1));
 	if (array == NULL)
