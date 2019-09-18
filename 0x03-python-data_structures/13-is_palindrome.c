@@ -13,7 +13,7 @@ int is_palindrome(listint_t **head)
 	int *array = NULL;
 
 	if (!head)
-		return (1);
+		return (0);
 	if (!(*head))
 		return (1);
 
@@ -37,12 +37,17 @@ int is_palindrome(listint_t **head)
 	while (i < (len / 2))
 	printf("array[i] = %i\n", array[i]), i++;*/
 	i = 0;
+	if (len % 2 != 0)
+		temp = temp->next;
 	while(temp != NULL)
 	{
-/*		printf("i = %i\n", i);
+		printf("i = %i\n", i);
 		printf("(len / 2) - i = %i\n", (len / 2) - i);
 		printf("temp->n = %i\n", temp->n);
-		printf("array[i] = %i\n", array[((len / 2) - 1) - i]);*/
+		printf("array[i] = %i\n", array[((len / 2) - 1) - i]);
+/*		if (len % 2 != 0)
+		temp = temp->next;*/
+		printf("temp->n = %i\n", temp->n);
 		if (temp->n == array[((len / 2) - 1) - i])
 		{
 /*			printf("temp->n = %i\n", temp->n);
