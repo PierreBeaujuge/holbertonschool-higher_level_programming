@@ -28,10 +28,10 @@ class Square:
             elif value < 0:
                 raise ValueError
         except TypeError:
-            print("size must be an integer")
+            print("size must be an integer", end='')
             raise Exception
         except ValueError:
-            print("size must be >= 0")
+            print("size must be >= 0", end='')
             raise Exception
 
     @property
@@ -44,13 +44,12 @@ class Square:
         """setter for position"""
         try:
             if isinstance(value, tuple) and len(value) is 2 and\
-               value[0] >= 0 and value[1] >= 0 and isinstance(value[0], int) and\
-               isinstance(value[1], int):
+               value[0] >= 0 and value[1] >= 0:
                 self.__position = value
             else:
                 raise TypeError
         except TypeError:
-            print("position must be a tuple of 2 positive integers")
+            print("position must be a tuple of 2 positive integers", end='')
             raise Exception
 
     def area(self):
