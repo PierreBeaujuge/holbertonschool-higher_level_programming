@@ -14,6 +14,7 @@ class TestMaxInteger(unittest.TestCase):
         Test function that checks the max of the list
         """
         list_1 = [1, 2, 3, 4]
+        list_6 = [4, 3, 2, 1]
         list_2 = [1, 3, 4, 2]
         list_3 = [1]
         list_4 = [-1]
@@ -23,6 +24,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max(list_3), max_integer(list_3))
         self.assertEqual(max(list_4), max_integer(list_4))
         self.assertEqual(max(list_5), max_integer(list_5))
+        self.assertEqual(max(list_6), max_integer(list_6))
 
     def test_empty(self):
         """
