@@ -62,6 +62,30 @@ Traceback (most recent call last):
   File "<stdin>", line 2, in lazy_matrix_mul
 ValueError: invalid data type for einsum
 
+>>> lazy_matrix_mul([[1, "2"], [3, 4]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in lazy_matrix_mul
+ValueError: invalid data type for einsum
+
+>>> lazy_matrix_mul([["1", 2], [3, 4]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in lazy_matrix_mul
+ValueError: invalid data type for einsum
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, "2"], [3, 4]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in lazy_matrix_mul
+ValueError: invalid data type for einsum
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [["1", 2], [3, 4]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in lazy_matrix_mul
+ValueError: invalid data type for einsum
+
 >>> lazy_matrix_mul([[1, 2], [3, "a"]], [[1, 2], [3, 4]])
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
