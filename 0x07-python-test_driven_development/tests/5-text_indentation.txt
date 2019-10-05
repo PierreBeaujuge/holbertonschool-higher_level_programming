@@ -1,0 +1,140 @@
+The ``5-text_indentation`` module
+============================
+
+Using ``text_indentation``
+---------------------
+
+This is a text file in reStructuredText format. Refer to the
+following documentation for details on proper guidelines:
+https://docs.python.org/3/library/doctest.html
+First import ``text_indentation`` from the ``5-text_indentation`` module:
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now use it:
+
+Base cases
+----------
+
+>>> text_indentation("first_string. second_string.")
+first_string.
+<BLANKLINE>
+second_string.
+<BLANKLINE>
+
+>>> text_indentation("first_string? second_string.")
+first_string?
+<BLANKLINE>
+second_string.
+<BLANKLINE>
+
+>>> text_indentation("first_string: second_string.")
+first_string:
+<BLANKLINE>
+second_string.
+<BLANKLINE>
+
+>>> text_indentation("first_string! second_string.")
+first_string! second_string.
+<BLANKLINE>
+
+>>> text_indentation("first_string second_string")
+first_string second_string
+
+Other cases
+-----------
+
+>>> text_indentation("")
+
+>>> text_indentation("first_string! second_string. ")
+first_string! second_string.
+<BLANKLINE>
+
+>>> text_indentation(" first_string! second_string.")
+ first_string! second_string.
+<BLANKLINE>
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation(1)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+>>> text_indentation()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation("Bob", "Bob")
+Traceback (most recent call last):
+...
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+>>> text_indentation("first_string.           second_string.")
+first_string.
+<BLANKLINE>
+second_string.
+<BLANKLINE>
+
+>>> text_indentation("first_string. second_string.         ")
+first_string.
+<BLANKLINE>
+second_string.
+<BLANKLINE>
+
+>>> text_indentation("first_string.second_string.")
+first_string.
+<BLANKLINE>
+second_string.
+<BLANKLINE>
+
+>>> text_indentation("first_string. second_string         ")
+first_string.
+<BLANKLINE>
+second_string         
+
+>>> text_indentation("first_string           second_string.")
+first_string           second_string.
+<BLANKLINE>
+
+>>> text_indentation("           first_string. second_string.")
+           first_string.
+<BLANKLINE>
+second_string.
+<BLANKLINE>
+
+>>> text_indentation("\nfirst_string.\nsecond_string.\n")
+<BLANKLINE>
+first_string.
+<BLANKLINE>
+<BLANKLINE>
+second_string.
+<BLANKLINE>
+<BLANKLINE>
+
+>>> text_indentation("first_string. \nsecond_string.")
+first_string.
+<BLANKLINE>
+<BLANKLINE>
+second_string.
+<BLANKLINE>
+
+>>> text_indentation("first_string. second_string.  \n  ")
+first_string.
+<BLANKLINE>
+second_string.
+<BLANKLINE>
+<BLANKLINE>
+<BLANKLINE>
+
+>>> text_indentation(".?:")
+.
+<BLANKLINE>
+?
+<BLANKLINE>
+:
+<BLANKLINE>
