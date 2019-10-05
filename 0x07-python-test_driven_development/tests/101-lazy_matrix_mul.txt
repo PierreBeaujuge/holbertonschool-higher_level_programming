@@ -62,6 +62,24 @@ Traceback (most recent call last):
   File "<stdin>", line 2, in lazy_matrix_mul
 ValueError: data type must provide an itemsize
 
+>>> lazy_matrix_mul([[1, 2], [3, "a"]], [[1, 2], [3, 4]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in lazy_matrix_mul
+ValueError: data type must provide an itemsize
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], ["a", 4]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in lazy_matrix_mul
+ValueError: data type must provide an itemsize
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, "a"]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in lazy_matrix_mul
+ValueError: data type must provide an itemsize
+
 Element in matrix cases
 -----------------------
 
@@ -187,3 +205,17 @@ array([[ 7, 10],
 >>> lazy_matrix_mul([[1, 2], [3, 4]], ([1, 2], [3, 4]))
 array([[ 7, 10],
        [15, 22]])
+
+>>> lazy_matrix_mul("a", ([1, 2], [3, 4]))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in lazy_matrix_mul
+TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U1') dtype('<U1')
+ dtype('<U1')
+
+>>> lazy_matrix_mul([[1, 2], [3, 4]], "a")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 2, in lazy_matrix_mul
+TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U1') dtype('<U1')
+ dtype('<U1')
