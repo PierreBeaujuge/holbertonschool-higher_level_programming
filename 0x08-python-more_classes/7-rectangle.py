@@ -65,7 +65,7 @@ class Rectangle:
         else:
             for j in range(self.__height):
                 for i in range(self.__width):
-                    pattern += Rectangle.print_symbol
+                    pattern += str(self.print_symbol)
                 if j is not (self.__height - 1):
                     pattern += '\n'
             return pattern
