@@ -1,9 +1,0 @@
-#!/usr/bin/python3
-"""
-Coordinates of a rectangle
-"""
-
-
-class Rectangle:
-    """define variables and methods"""
-    pass
