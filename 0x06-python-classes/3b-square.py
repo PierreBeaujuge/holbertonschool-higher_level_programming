@@ -1,29 +1,20 @@
 #!/usr/bin/python3
 """
-Access and update private attribute
+Area of a square
 """
 
 
 class Square:
     """define variables and methods"""
+
     def __init__(self, size=0):
         """initialize attributes"""
-        self.size = size
-
-    @property
-    def size(self):
-        """getter for size"""
-        return self.__size
-
-    @size.setter
-    def size(self, value):
-        """setter for size"""
         try:
-            if isinstance(value, int) and value >= 0:
-                self.__size = value
-            elif not isinstance(value, int):
+            if isinstance(size, int) and size >= 0:
+                self.__size = size
+            elif not isinstance(size, int):
                 raise TypeError
-            elif value < 0:
+            elif size < 0:
                 raise ValueError
         except TypeError:
             print("size must be an integer", end='')

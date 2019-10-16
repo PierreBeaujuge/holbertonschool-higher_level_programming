@@ -71,3 +71,25 @@ class Square:
                 for i in range(self.__size):
                     print('#', end='')
                 print('')
+
+    def __str__(self):
+        """
+        define special __str__ method for printing a square
+        when print(self) is called
+        """
+        pattern = ''
+        if self.__size is 0:
+            return pattern
+        else:
+            if self.__position[1] > 0:
+                for k in range(self.__position[1]):
+                    pattern += '\n'
+            for j in range(self.__size):
+                if self.__position[0] > 0:
+                    for l in range(self.__position[0]):
+                        pattern += ' '
+                for i in range(self.__size):
+                        pattern += '#'
+                if j is not self.__size - 1:
+                    pattern += '\n'
+            return pattern
