@@ -60,6 +60,7 @@ Test for negative numbers:
 [-1, 1, 2, 3, 4, 5]
 
 Test for zero:
+
 >>> my_list = MyList([1, 4, 2, 3, 5])
 >>> print(my_list)
 [1, 4, 2, 3, 5]
@@ -70,6 +71,7 @@ Test for zero:
 [0, 1, 2, 3, 4, 5]
 
 Test for empty list:
+
 >>> my_list = MyList([])
 >>> print(my_list)
 []
@@ -79,8 +81,8 @@ Test for empty list:
 >>> my_list.print_sorted()
 [1]
 
-Test for list on one:
-Test for empty list:
+Test for list of one:
+
 >>> my_list = MyList([1])
 >>> print(my_list)
 [1]
@@ -89,3 +91,38 @@ Test for empty list:
 [1, 2]
 >>> my_list.print_sorted()
 [1, 2]
+
+Test for list of one with append():
+
+>>> my_list = MyList([1])
+>>> print(my_list)
+[1]
+>>> my_list.append(2)
+>>> print(my_list)
+[1, 2]
+>>> my_list.print_sorted()
+[1, 2]
+
+Test that print_sorted() returns a new list
+-------------------------------------------
+
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list += [1, 4, 2, 3, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> id(my_list) == id(my_list.print_sorted())
+[1, 2, 3, 4, 5]
+False
+
+Test with print_sorted() on empty list
+--------------------------------------
+
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+>>> my_list.print_sorted()
+[]
