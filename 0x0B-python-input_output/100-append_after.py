@@ -10,15 +10,16 @@ def append_after(filename="", search_string="", new_string=""):
     after each line containing a specific string
     """
     with open(filename, 'r') as f:
-        a_dict = f.readlines()
-        for i in range(len(a_dict)):
-            #            b_dict = a_dict[i].split(' ')
-            #            print(b_dict)
-            #            for word in b_dict:
-            if search_string in a_dict[i]:
-                a_dict.insert(i + 1, new_string)
-                i += 1
-                #        print(a_dict)
+        a_list = f.readlines()
+        b_list = a_list.copy()
+        j = 0
+        for i in range(len(a_list)):
+            j += 1
+            if search_string in a_list[i]:
+                b_list.insert(j + 1, new_string)
+                j += 1
+                print(a_list)
+                print(b_list)
     with open(filename, 'w') as wf:
-        for i in range(len(a_dict)):
-            wf.write(a_dict[i])
+        for i in range(len(b_list)):
+            wf.write(b_list[i])
