@@ -14,12 +14,12 @@ def append_after(filename="", search_string="", new_string=""):
         b_list = a_list.copy()
         j = 0
         for i in range(len(a_list)):
-            j += 1
             if search_string in a_list[i]:
                 b_list.insert(j + 1, new_string)
                 j += 1
 #                print(a_list)
 #                print(b_list)
+            j += 1
     with open(filename, 'w') as wf:
         for i in range(len(b_list)):
             wf.write(b_list[i])
