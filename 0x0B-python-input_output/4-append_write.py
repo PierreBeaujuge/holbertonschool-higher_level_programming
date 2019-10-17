@@ -10,8 +10,8 @@ def append_write(filename="", text=""):
     and returns the number of characters added
     """
     with open(filename, 'a') as af:
-        af.write(str(text))
-    with open(filename, 'r') as rf:
-        f_contents = rf.readlines()
+        return af.write(str(text))
+#    with open(filename, 'r') as rf:
+#        f_contents = rf.readlines()
 #        print(f_contents)
-        return(len(f_contents[-1]))
+#        return(len(f_contents[-1]))
