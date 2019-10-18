@@ -3,7 +3,7 @@
 BaseGeometry module
 """
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
-Rectangle = __import__('8-rectangle').Rectangle
+Rectangle = __import__('9-rectangle').Rectangle
 
 # class BaseGeometry:
 #     """
