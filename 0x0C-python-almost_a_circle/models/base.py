@@ -57,7 +57,8 @@ class Base:
         function that returns the list of the JSON string representation
         json_string (in a usable list format)
         """
-        if json_string is None or len(json_string) == 0:
+        if json_string is None or len(json_string) == 0\
+           or type(json_string) is not str:
             return "[]"
         return json.loads(json_string)
 
