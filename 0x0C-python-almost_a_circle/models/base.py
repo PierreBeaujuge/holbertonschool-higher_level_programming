@@ -93,7 +93,7 @@ class Base:
                     list_objs += [obj]
                 return list_objs
         except:
-            return '[]'
+            return []
 
     # CSV documentation found here:
     # https://docs.python.org/3.4/library/csv.html
