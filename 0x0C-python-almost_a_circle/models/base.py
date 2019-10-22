@@ -47,8 +47,9 @@ class Base:
                 f.write("[]")
             # write (a string representation of) a list of dictionaries
             # where each dictionary represents an object/instance
-            f.write(cls.to_json_string([obj.to_dictionary()
-                                        for obj in list_objs]))
+            else:
+                f.write(cls.to_json_string([obj.to_dictionary()
+                                            for obj in list_objs]))
 
     @staticmethod
     def from_json_string(json_string):
