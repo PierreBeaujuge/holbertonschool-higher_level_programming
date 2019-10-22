@@ -278,48 +278,48 @@ class TestBase(unittest.TestCase):
         dr1 = {'id': 1, 'width': 3, 'height': 5, 'x': 2, 'y': 4}
         r1 = Rectangle.create(**dr1)
         self.assertEqual(r1.to_dictionary(), dr1)
-        self.assertEqual(Base._Base__nb_objects, 0)
+        self.assertEqual(Base._Base__nb_objects, 1)
 
         ds1 = {'id': 1, 'size': 3, 'x': 2, 'y': 4}
         s1 = Square.create(**ds1)
         self.assertEqual(s1.to_dictionary(), ds1)
-        self.assertEqual(Base._Base__nb_objects, 0)
+        self.assertEqual(Base._Base__nb_objects, 2)
 
         r2 = Rectangle(3, 5, 2, 4, 1)
         dr2 = r2.to_dictionary()
         r3 = Rectangle.create(**dr2)
         self.assertEqual(r3.to_dictionary(), dr2)
-        self.assertEqual(Base._Base__nb_objects, 0)
+        self.assertEqual(Base._Base__nb_objects, 3)
 
         r4 = Rectangle(3, 5, 2, 4)
         dr4 = r4.to_dictionary()
         r5 = Rectangle.create(**dr4)
         self.assertEqual(r5.to_dictionary(), dr4)
-        self.assertEqual(Base._Base__nb_objects, 1)
+        self.assertEqual(Base._Base__nb_objects, 5)
 
         r6 = Rectangle(3, 5)
         dr6 = r6.to_dictionary()
         r7 = Rectangle.create(**dr6)
         self.assertEqual(r7.to_dictionary(), dr6)
-        self.assertEqual(Base._Base__nb_objects, 2)
+        self.assertEqual(Base._Base__nb_objects, 7)
 
         s2 = Square(3, 2, 4, 1)
         ds2 = s2.to_dictionary()
         s3 = Square.create(**ds2)
         self.assertEqual(s3.to_dictionary(), ds2)
-        self.assertEqual(Base._Base__nb_objects, 2)
+        self.assertEqual(Base._Base__nb_objects, 8)
 
         s4 = Square(3, 2, 4)
         ds4 = s4.to_dictionary()
         s5 = Square.create(**ds4)
         self.assertEqual(s5.to_dictionary(), ds4)
-        self.assertEqual(Base._Base__nb_objects, 3)
+        self.assertEqual(Base._Base__nb_objects, 10)
 
         s6 = Square(3, 2)
         ds6 = s6.to_dictionary()
         s7 = Square.create(**ds6)
         self.assertEqual(s7.to_dictionary(), ds6)
-        self.assertEqual(Base._Base__nb_objects, 4)
+        self.assertEqual(Base._Base__nb_objects, 12)
 
     def test_load_from_file(self):
         """Test load_from_file method"""
