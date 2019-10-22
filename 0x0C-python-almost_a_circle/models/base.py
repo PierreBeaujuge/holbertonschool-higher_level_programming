@@ -71,9 +71,9 @@ class Base:
         """
         if dictionary is not None and len(dictionary) > 0:
             if cls.__name__ == 'Rectangle':
-                obj = cls(20, 20, 20, 20, 20)
+                obj = cls(1, 1)
             if cls.__name__ == 'Square':
-                obj = cls(20, 20, 20, 20)
+                obj = cls(1)
             obj.update(**dictionary)
             return obj
 
