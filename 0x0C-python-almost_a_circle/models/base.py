@@ -69,12 +69,13 @@ class Base:
         as a "double pointer" for changes to be permanently reflected outside
         of the create() and update() functions
         """
-        if cls.__name__ == 'Rectangle':
-            obj = cls(20, 20, 20, 20, 20)
-        if cls.__name__ == 'Square':
-            obj = cls(20, 20, 20, 20)
-        obj.update(**dictionary)
-        return obj
+        if dictionary is not None and len(dictionary) > 0:
+            if cls.__name__ == 'Rectangle':
+                obj = cls(20, 20, 20, 20, 20)
+            if cls.__name__ == 'Square':
+                obj = cls(20, 20, 20, 20)
+            obj.update(**dictionary)
+            return obj
 
     @classmethod
     def load_from_file(cls):
