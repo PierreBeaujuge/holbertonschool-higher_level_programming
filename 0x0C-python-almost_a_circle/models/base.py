@@ -42,7 +42,7 @@ class Base:
         list_objs (e.g. [r1, r2, r3]) to a file
         function that serializes in JSON
         """
-        with open("{}.json".format(cls.__name__), 'w+') as f:
+        with open("{}.json".format(cls.__name__), 'w') as f:
             if list_objs is None:
                 f.write("[]")
             # write (a string representation of) a list of dictionaries
