@@ -12,7 +12,7 @@ from models import base
 from models import rectangle
 from models.base import Base
 from models.rectangle import Rectangle
-
+from os import path
 
 class TestRectangle(unittest.TestCase):
     """define variables and methods"""
@@ -464,3 +464,11 @@ class TestRectangle(unittest.TestCase):
         r3 = Rectangle(3, 5)
         d3 = {"width": 3, "height": 5, "x": 0, "y": 0, "id": 2}
         self.assertEqual(r3.to_dictionary(), d3)
+
+    def test_save_to_file(self):
+        """Test save_to_file method"""
+
+        Rectangle.save_to_file(None)
+        self.assertTrue(path.isfile('Rectangle.json'))
+        Rectangle.save_to_file([])
+        self.assertTrue(path.isfile('Rectangle.json'))

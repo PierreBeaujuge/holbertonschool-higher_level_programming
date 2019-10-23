@@ -14,7 +14,7 @@ from models import square
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
-
+from os import path
 
 class TestSquare(unittest.TestCase):
     """define variables and methods"""
@@ -394,3 +394,11 @@ class TestSquare(unittest.TestCase):
         s3 = Square(3)
         d3 = {"size": 3, "x": 0, "y": 0, "id": 2}
         self.assertEqual(s3.to_dictionary(), d3)
+
+    def test_save_to_file(self):
+        """Test save_to_file method"""
+
+        Square.save_to_file(None)
+        self.assertTrue(path.isfile('Rectangle.json'))
+        Square.save_to_file([])
+        self.assertTrue(path.isfile('Rectangle.json'))
