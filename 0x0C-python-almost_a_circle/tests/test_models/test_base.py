@@ -262,12 +262,12 @@ class TestBase(unittest.TestCase):
 
         Square.save_to_file(None)
         self.assertTrue(path.isfile('Square.json'))
-        with open('Rectangle.json') as f:
+        with open('Square.json') as f:
             self.assertEqual(f.read(), '[]')
 
         Square.save_to_file([])
         self.assertTrue(path.isfile('Square.json'))
-        with open('Rectangle.json') as f:
+        with open('Square.json') as f:
             self.assertEqual(f.read(), '[]')
 
     def test_from_json_string(self):
