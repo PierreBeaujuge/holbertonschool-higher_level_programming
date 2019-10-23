@@ -238,6 +238,11 @@ class TestBase(unittest.TestCase):
         Rectangle.save_to_file([r3])
         self.assertTrue(path.isfile('Rectangle.json'))
 
+        Rectangle.save_to_file(None)
+        self.assertTrue(path.isfile('Rectangle.json'))
+        Rectangle.save_to_file([])
+        self.assertTrue(path.isfile('Rectangle.json'))
+
         s1 = Square(3, 2, 4, 1)
         Square.save_to_file([s1])
         self.assertTrue(path.isfile('Square.json'))
@@ -249,6 +254,11 @@ class TestBase(unittest.TestCase):
         s3 = Square(3)
         Square.save_to_file([s3])
         self.assertTrue(path.isfile('Square.json'))
+
+        Square.save_to_file(None)
+        self.assertTrue(path.isfile('Rectangle.json'))
+        Square.save_to_file([])
+        self.assertTrue(path.isfile('Rectangle.json'))
 
     def test_from_json_string(self):
         """Test from_json_string method"""
