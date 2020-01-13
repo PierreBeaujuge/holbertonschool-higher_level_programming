@@ -9,4 +9,4 @@ if __name__ == "__main__":
     import sys
 
     with urllib.request.urlopen(sys.argv[1]) as response:
-        print(dict(response.info())['X-Request-Id'])
+        print(dict(response.info()).get('X-Request-Id'))
