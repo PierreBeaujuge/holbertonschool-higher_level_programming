@@ -1,5 +1,5 @@
 #!/usr/bin/node
-var myArgs = process.argv.slice(2);
+let myArgs = process.argv.slice(2);
 
 if (typeof myArgs[0] === 'undefined') {
   console.log('No argument');
