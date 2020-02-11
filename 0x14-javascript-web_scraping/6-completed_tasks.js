@@ -10,7 +10,7 @@ request(myArray[0], function (error, response, body) {
     let count = 0;
     let userIdref = 0;
     JSON.parse(body).forEach(dict => {
-      if (dict.userId !== userIdref) { userIdref = dict.userId; count = 0; } else {
+      if (dict.userId !== userIdref) { userIdref = dict.userId; count = 0; if (dict.completed) { count++; newDict[userIdref] = count; } } else {
         if (dict.completed) { count++; newDict[userIdref] = count; }
       }
     });
