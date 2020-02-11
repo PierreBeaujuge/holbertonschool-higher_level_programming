@@ -19,10 +19,10 @@ for (let i = 1; i < sortedItems.length; i++) {
     values.push(sortedItems[i - 1][1]);
     newDict[sortedItems[i - 1][0]] = values;
     values = [];
-  }
-  if (sortedItems[i + 1] === undefined) {
-    values.push(sortedItems[i][1]);
-    newDict[sortedItems[i][0]] = values;
+    if (sortedItems[i + 1] === undefined) {
+      values.push(sortedItems[i][1]);
+      newDict[sortedItems[i][0]] = values;
+    }
   }
 }
 console.log(newDict);
