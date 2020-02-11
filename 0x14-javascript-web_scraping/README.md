@@ -1,0 +1,1 @@
+Learn and practice Javascript - Web scraping
