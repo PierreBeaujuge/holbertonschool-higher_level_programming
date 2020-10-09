@@ -534,7 +534,7 @@ Square 5 != Square 6
 
 ---
 
-### [10. ByteCode -> Python #5](./103-magic_class.py)
+### 10. ByteCode -> Python #5
 
 - Write the Python class MagicClass that does exactly the same as the following Python bytecode:
 
