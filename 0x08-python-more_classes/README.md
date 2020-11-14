@@ -480,7 +480,7 @@ Bye rectangle...
 
 ---
 
-### [10. Class and instance attributes](https://medium.com/@tuvo1106/python-class-and-instance-attributes-c4d9c7d3b3ef)
+### 10. Class and instance attributes
 
 - Write a blog post describing how object and class attributes work.
   - What’s a class attribute
